@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>com.guang.eunormia</groupId>
+    <artifactId>main</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>Eunormia</name>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <artifactId>maven-source-plugin</artifactId>
+                <version>2.2.1</version>
+                <executions>
+                    <execution>
+                        <id>attach-sources</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>jar-no-fork</goal>
+                        </goals> 
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin> 
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <version>2.9</version>
+                <executions> 
+                    <execution> 
+                        <id>attach-javadocs</id>
+                        <phase>deploy</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals> 
+                    </execution> 
+                </executions> 
+            </plugin>
+        </plugins>
+    </build>
+    <modules>
+        <module>common</module>
+        <module>atomic</module>
+        <module>group</module>
+  </modules>
+  
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.11</version>
+            <scope>test</scope>
+        </dependency>
+    </dependencies>
+  
+    <distributionManagement>  
+        <repository>  
+            <id>iphonele-snapshots</id>  
+            <name>Iphonele Snapshot</name>  
+            <url>http://122.225.68.71:8083/nexus/content/repositories/iphonele-snapshots</url>
+        </repository>  
+    </distributionManagement>
+  
+</project>
